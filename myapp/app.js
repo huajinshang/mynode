@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var ejs=require('ejs'); //引用ejs模板引擎
 
 /*在应用中加载路由模块*/
 var index = require('./routes/index');
@@ -12,8 +13,14 @@ var users = require('./routes/users');
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+//jade模板引擎的代码
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'jade');
+
+//ejs模板引擎的代码
+app.engine('html',ejs.__express);
+app.set('view engine', 'html');
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
