@@ -1,0 +1,18 @@
+body {
+  font-family: "San Francisco Display";
+  font-size: 20px;
+}
+
+table {
+  width: auto;
+}
+
+tr {
+  width: auto;
+  line-height: 30px;
+}
+
+td {
+  padding: 0 20px;
+  text-align: center;
+}

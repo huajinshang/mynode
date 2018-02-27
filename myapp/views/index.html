@@ -6,18 +6,27 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><%= title %></title>
+    <!--此处引用静态文件，只需添加相对于public的文件目录路径即可-->
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <h1><%= title %></h1>
 <table>
-    <th>
-    <td>id</td>
-    <td>姓名</td>
-    <td>年龄</td>
-    </th>
     <tr>
-
+        <th>id</th>
+        <th>姓名</th>
+        <th>年龄</th>
     </tr>
+    <% for(var i = 0; i < datas.length; i++) {%>
+    <tr>
+        <td><%= datas[i].id %></td>
+        <td><%= datas[i].age %></td>
+        <td><%= datas[i].name %></td>
+        <td><a href="/users/add">添加用户</a></td>
+        <td><a href="/users/del/<%= datas[i].id %>">删除</a></td>
+        <td><a href="/users/toUpdate/<%= datas[i].id %>">修改</a></td>
+    </tr>
+    <% } %>
 </table>
 </body>
 </html>
